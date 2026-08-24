@@ -1,0 +1,61 @@
+{
+    "tools": [
+        {
+            "name": "cr",
+            "bin": ""
+        },
+        {
+            "name": "about",
+            "bin": ""
+        },
+        {
+            "name": "gr",
+            "bin": ""
+        },
+        {
+            "name": "mk",
+            "bin": ""
+        },
+        {
+            "name": "ow",
+            "bin": ""
+        },
+        {
+            "name": "pm",
+            "bin": ""
+        },
+        {
+            "name": "rm",
+            "bin": ""
+        },
+        {
+            "name": "zesh",
+            "bin": ""
+        },
+        {
+            "name": "dl",
+            "bin": ""
+        },
+        {
+            "name": "kernel",
+            "bin": "https://github.com/Zenith-Linux/kernel.git"
+            "info": "kernel, build from source"
+        },
+        {
+            "name": "zpm",
+            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/v0.1/zpm"
+            "info": "non-standard, default pm, buildin"
+        },
+        {
+            "name": "installer",
+            "bin": ""
+        },
+        {
+            "name": "zlb",
+            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/v0.1/zlb"
+        },
+        {
+            "name": "zpk",
+            "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v0.1/zpk"
+    ]
+}
