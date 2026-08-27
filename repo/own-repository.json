@@ -33,8 +33,20 @@
             "bin": ""
         },
         {
+            "name": "zsrv",
+            "bin": ""
+        },
+        {
+            "name": "zboot",
+            "bin": ""
+        },
+        {
             "name": "dl",
             "bin": ""
+        },
+        {
+            "name": "zde",
+            "bin": "https://github.com/Zenith-Linux/zde/releases/download/v{version}/ZDE.zpk"
         },
         {
             "name": "kernel",
@@ -43,19 +55,20 @@
         },
         {
             "name": "zpm",
-            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/v0.1/zpm"
+            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/v{version}/zpm"
             "info": "non-standard, default pm, buildin"
         },
         {
             "name": "installer",
-            "bin": ""
+            "bin": "https://github.com/Zenith-Linux/installer/releases/download/v{version}/zenit-installer"
         },
         {
             "name": "zlb",
-            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/v0.1/zlb"
+            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/v{version}/zlb"
         },
         {
             "name": "zpk",
-            "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v0.1/zpk"
+            "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v{version}/zpk"
+        }
     ]
 }
