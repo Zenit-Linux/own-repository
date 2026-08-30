@@ -31,8 +31,8 @@
             "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v{version}/zpk"
         },
         {
-            "name": "carbon-lang",
-            "bin": "https://github.com/Zenith-Linux/Carbon-Lang/releases/download/v{version}/carbon-lang.zpk"
+            "name": "carbon",
+            "bin": "https://github.com/Zenith-Linux/carbon-lang/releases/download/v{version}/carbon-lang.zpk"
         }
     ]
 }
