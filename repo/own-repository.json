@@ -10,12 +10,12 @@
         },
         {
             "name": "kernel",
-            "bin": "https://github.com/Zenith-Linux/kernel.git"
+            "bin": "https://github.com/Zenith-Linux/kernel.git",
             "info": "kernel, build from source"
         },
         {
             "name": "zpm",
-            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/v{version}/zpm"
+            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/v{version}/zpm",
             "info": "non-standard, default pm, buildin"
         },
         {
