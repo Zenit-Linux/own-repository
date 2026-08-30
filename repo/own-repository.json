@@ -1,48 +1,8 @@
 {
     "tools": [
         {
-            "name": "cr",
-            "bin": ""
-        },
-        {
-            "name": "about",
-            "bin": ""
-        },
-        {
-            "name": "gr",
-            "bin": ""
-        },
-        {
-            "name": "mk",
-            "bin": ""
-        },
-        {
-            "name": "ow",
-            "bin": ""
-        },
-        {
-            "name": "pm",
-            "bin": ""
-        },
-        {
-            "name": "rm",
-            "bin": ""
-        },
-        {
-            "name": "zesh",
-            "bin": ""
-        },
-        {
-            "name": "zsrv",
-            "bin": ""
-        },
-        {
-            "name": "zboot",
-            "bin": ""
-        },
-        {
-            "name": "dl",
-            "bin": ""
+            "name": "zenit-base",
+            "bin": "https://github.com/Zenith-Linux/zenit-base/releases/download/v{version}/zenit-base.zpk"
         },
         {
             "name": "zde",
@@ -69,6 +29,10 @@
         {
             "name": "zpk",
             "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v{version}/zpk"
+        },
+        {
+            "name": "carbon-lang",
+            "bin": "https://github.com/Zenith-Linux/Carbon-Lang/releases/download/v{version}/carbon-lang.zpk"
         }
     ]
 }
