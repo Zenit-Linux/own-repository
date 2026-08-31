@@ -28,7 +28,7 @@
         },
         {
             "name": "zpk",
-            "bin": "https://github.com/Zenith-Linux/zpk/releases/download/v{version}/zpk"
+            "bin": "https://github.com/Zenit-Linux/zpk/releases/download/{version}/zpk-{version}-x86_64.zpk"
         },
         {
             "name": "carbon",
