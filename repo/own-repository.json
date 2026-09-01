@@ -45,13 +45,19 @@
             "description": "Build carbon lang for Zenit Linux.",
             "tags": "programing-language,"
         },
-         {
+        {
             "name": "h-sharp",
             "bin": "https://github.com/HackerOS-Linux-System/H-Sharp/releases/download/{version}/H-Sharp.zpk",
             "description": "HackerOS main programming language (1 of 3).",
             "tags": "programing-language,"
         },
-         {
+        {
+            "name": "hackerscript",
+            "bin": "https://github.com/HackerOS-Linux-System/HackerScript/releases/download/{version}/HackerScript.zpk",
+            "description": "Second programming language HackerOS (Experimental).",
+            "tags": "programing-language,"
+        },
+        {
             "name": "blue-environment",
             "bin": "https://github.com/HackerOS-Linux-System/Blue-Environment/releases/download/{version}/Blue-Environment.zpk",
             "description": "A graphical environment developed by the HackerOS Linux distribution.",
