@@ -1,61 +1,78 @@
 {
+    "schema_version": 2,
     "tools": [
         {
             "name": "zenit-base",
-            "bin": "https://github.com/Zenith-Linux/zenit-base/releases/download/{version}/zenit-base.zpk"
+            "bin": "https://github.com/Zenith-Linux/zenit-base/releases/download/{version}/zenit-base.zpk",
             "description": "Alternative tools for gnu.",
             "tags": "gnu-free"
         },
         {
             "name": "zde",
-            "bin": "https://github.com/Zenith-Linux/zde/releases/download/{version}/ZDE.zpk"
+            "bin": "https://github.com/Zenith-Linux/zde/releases/download/{version}/ZDE.zpk",
             "description": "Graphical environment developed by Zenit Linux.",
             "tags": "graphical-environment, de"
         },
         {
             "name": "kernel",
-            "bin": "https://github.com/Zenith-Linux/kernel.git",
+            "type": "git",
+            "repo": "https://github.com/Zenith-Linux/kernel.git",
+            "ref": "main",
+            "lang": "janet",
+            "build_script": "build.janet",
+            "install_script": "install.janet",
             "description": "Linux kernel for Zenit Linux (default).",
-            "tags": "kernel"
+            "tags": "kernel",
+            "branches": {
+                "stable": {
+                    "type": "binary",
+                    "bin": "https://github.com/Zenith-Linux/kernel/releases/download/{version}/kernel.zpk"
+                },
+                "rolling": {
+                    "type": "git",
+                    "repo": "https://github.com/Zenith-Linux/kernel.git",
+                    "ref": "main"
+                }
+            }
         },
         {
             "name": "zpm",
             "bin": "https://github.com/Zenith-Linux/zpm/releases/download/{version}/zpm",
             "description": "The main package manager for Zenit Linux.",
-            "tags": "default-pm, buildin",
+            "tags": "default-pm, buildin"
         },
         {
             "name": "installer",
-            "bin": "https://github.com/Zenith-Linux/installer/releases/download/{version}/zenit-installer"
+            "bin": "https://github.com/Zenith-Linux/installer/releases/download/{version}/zenit-installer",
             "description": "Official system installer (can also be used in Zenit Linux forks)."
         },
         {
             "name": "zlb",
-            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/{version}/zlb"
+            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/{version}/zlb",
             "description": "The official iso image builder officially used by Zenit Linux."
         },
         {
             "name": "zpk",
-            "bin": "https://github.com/Zenit-Linux/zpk/releases/download/{version}/zpk-{version}-x86_64.zpk"
+            "bin": "https://github.com/Zenit-Linux/zpk/releases/download/{version}/zpk-{version}-x86_64.zpk",
             "description": "Official .zpk builder for zpm."
         },
         {
             "name": "carbon",
             "bin": "https://github.com/Zenith-Linux/carbon-lang/releases/download/{version}/carbon-lang.zpk",
             "description": "Build carbon lang for Zenit Linux.",
-            "tags": "programing-language,"
+            "tags": "programing-language"
         },
         {
             "name": "h-sharp",
             "bin": "https://github.com/HackerOS-Linux-System/H-Sharp/releases/download/{version}/H-Sharp.zpk",
             "description": "HackerOS main programming language (1 of 3).",
-            "tags": "programing-language,"
+            "tags": "programing-language"
         },
         {
             "name": "hackerscript",
             "bin": "https://github.com/HackerOS-Linux-System/HackerScript/releases/download/{version}/HackerScript.zpk",
             "description": "Second programming language HackerOS (Experimental).",
-            "tags": "programing-language,"
+            "tags": "programing-language"
         },
         {
             "name": "blue-environment",
