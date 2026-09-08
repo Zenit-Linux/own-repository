@@ -3,7 +3,7 @@
     "tools": [
         {
             "name": "zenit-base",
-            "bin": "https://github.com/Zenith-Linux/zenit-base/releases/download/{version}/zenit-base.zpk",
+            "bin": "https://github.com/Zenit-Linux/zenit-base/releases/download/{version}/zenit-base.zpk",
             "description": "Alternative tools for gnu.",
             "tags": "gnu-free"
         },
