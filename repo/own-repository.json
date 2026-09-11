@@ -53,7 +53,7 @@
         },
         {
             "name": "zpk",
-            "bin": "https://github.com/Zenit-Linux/zpk/releases/download/{version}/zpk-{version}-x86_64.zpk",
+            "bin": "https://github.com/Zenit-Linux/zpk/releases/download/{version}/zpk-x86_64.zpk",
             "description": "Official .zpk builder for zpm."
         },
         {
