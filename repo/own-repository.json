@@ -75,6 +75,12 @@
             "tags": "programing-language"
         },
         {
+            "name": "legendary-lang",
+            "bin": "https://github.com/LegendaryOS-Linux-System/legendary-lang/releases/download/{version}/Legendary-Lang.zpk",
+            "description": "Programming language for LegendaryOS.",
+            "tags": "programing-language"
+        },
+        {
             "name": "blue-environment",
             "bin": "https://github.com/HackerOS-Linux-System/Blue-Environment/releases/download/{version}/Blue-Environment.zpk",
             "description": "A graphical environment developed by the HackerOS Linux distribution.",
