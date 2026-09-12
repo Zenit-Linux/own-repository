@@ -58,7 +58,7 @@
         },
         {
             "name": "carbon",
-            "bin": "https://github.com/Zenith-Linux/carbon-lang/releases/download/{version}/carbon-lang.zpk",
+            "bin": "https://github.com/Zenit-Linux/carbon-lang/releases/download/v0.0.0-trunk/carbon-lang.zpk",
             "description": "Build carbon lang for Zenit Linux.",
             "tags": "programing-language"
         },
