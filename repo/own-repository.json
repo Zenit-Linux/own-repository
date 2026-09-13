@@ -63,7 +63,13 @@
             "tags": "programing-language"
         },
         {
-            "name": "h-sharp",
+            "name": "janet",
+            "bin": "https://github.com/Zenit-Linux/janet/releases/download/{version}/janet.zpk",
+            "description": "Janet packaging for Zenit Linux.",
+            "tags": "programing-language"
+        },
+        {
+            "name": "hsharp",
             "bin": "https://github.com/HackerOS-Linux-System/H-Sharp/releases/download/{version}/H-Sharp.zpk",
             "description": "HackerOS main programming language (1 of 3).",
             "tags": "programing-language"
@@ -72,6 +78,12 @@
             "name": "hackerscript",
             "bin": "https://github.com/HackerOS-Linux-System/HackerScript/releases/download/{version}/HackerScript.zpk",
             "description": "Second programming language HackerOS (Experimental).",
+            "tags": "programing-language"
+        },
+        {
+            "name": "nim",
+            "bin": "https://github.com/Zenit-Linux/nim/releases/download/{version}/nim.zpk",
+            "description": "Nim and Nimony and Nimble packaging for Zenit Linux",
             "tags": "programing-language"
         },
         {
