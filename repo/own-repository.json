@@ -9,14 +9,14 @@
         },
         {
             "name": "zde",
-            "bin": "https://github.com/Zenith-Linux/zde/releases/download/{version}/ZDE.zpk",
+            "bin": "https://github.com/Zenit-Linux/zde/releases/download/{version}/ZDE.zpk",
             "description": "Graphical environment developed by Zenit Linux.",
             "tags": "graphical-environment, de"
         },
         {
             "name": "kernel",
             "type": "git",
-            "repo": "https://github.com/Zenith-Linux/kernel.git",
+            "repo": "https://github.com/Zenit-Linux/kernel.git",
             "ref": "main",
             "lang": "janet",
             "build_script": "build.janet",
@@ -26,29 +26,29 @@
             "branches": {
                 "stable": {
                     "type": "binary",
-                    "bin": "https://github.com/Zenith-Linux/kernel/releases/download/{version}/kernel.zpk"
+                    "bin": "https://github.com/Zenit-Linux/kernel/releases/download/{version}/kernel.zpk"
                 },
                 "rolling": {
                     "type": "git",
-                    "repo": "https://github.com/Zenith-Linux/kernel.git",
+                    "repo": "https://github.com/Zenit-Linux/kernel.git",
                     "ref": "main"
                 }
             }
         },
         {
             "name": "zpm",
-            "bin": "https://github.com/Zenith-Linux/zpm/releases/download/{version}/zpm",
+            "bin": "https://github.com/Zenit-Linux/zpm/releases/download/{version}/zpm",
             "description": "The main package manager for Zenit Linux.",
             "tags": "default-pm, buildin"
         },
         {
             "name": "installer",
-            "bin": "https://github.com/Zenith-Linux/installer/releases/download/{version}/zenit-installer",
+            "bin": "https://github.com/Zenit-Linux/installer/releases/download/{version}/zenit-installer",
             "description": "Official system installer (can also be used in Zenit Linux forks)."
         },
         {
             "name": "zlb",
-            "bin": "https://github.com/Zenith-Linux/zlb/releases/download/{version}/zlb",
+            "bin": "https://github.com/Zenit-Linux/zlb/releases/download/{version}/zlb",
             "description": "The official iso image builder officially used by Zenit Linux."
         },
         {
