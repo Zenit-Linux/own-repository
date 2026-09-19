@@ -43,7 +43,7 @@
         },
         {
             "name": "installer",
-            "bin": "https://github.com/Zenit-Linux/installer/releases/download/{version}/zenit-installer.zpk",
+            "bin": "https://github.com/Zenit-Linux/installer/releases/download/{version}/installer.zpk",
             "description": "Official system installer (can also be used in Zenit Linux forks)."
         },
         {
