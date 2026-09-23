@@ -1,0 +1,65 @@
+name: Generuj latest-versions.json
+
+# Codziennie (plus reczne uruchomienie i przy kazdej zmianie
+# own-repository.json) centralnie rozwiazuje "jaka jest najnowsza wersja"
+# dla WSZYSTKICH narzedzi z own-repository.json -- RAZ, z jednego miejsca --
+# zamiast kazdy klient zpm na swiecie robil to osobno przez api.github.com
+# (limit 60 zapytan/h NA ADRES IP dla niezalogowanych -- przy wielu
+# uzytkownikach na tym samym IP/w tej samej sieci wyczerpuje sie natychmiast).
+#
+# Wynik (repo/latest-versions.json) jest zwykłym plikiem w tym repo,
+# publicznie czytelnym przez raw.githubusercontent.com/Zenit-Linux/
+# own-repository/main/repo/latest-versions.json -- ten adres ma zupelnie
+# inny (duzo luzniejszy) limit niz api.github.com, wiec klienci zpm moga go
+# odpytywac bez ograniczen praktycznie identycznych do zwyklego pobierania
+# pliku statycznego. Klient zpm (od wersji 0.6, patrz zpmpkg/ownrepo.nim w
+# repo zpm) czyta ten plik jako PIERWSZA, najtansza warstwa -- jedno
+# pobranie rozwiazuje od razu wszystkie pakiety "own" w jednym buildzie.
+#
+# Format wynikowego pliku: {"owner/repo": "vX.Y.Z", ...} -- patrz
+# scripts/generate_latest_versions.py po pelny opis logiki i uzasadnienie.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"  # 03:17 UTC codziennie -- dowolna pora o niskim obciazeniu
+  workflow_dispatch: {}
+  push:
+    branches: ["main"]
+    paths:
+      - "repo/own-repository.json"
+      - "scripts/generate_latest_versions.py"
+      - ".github/workflows/generate-latest-versions.yml"
+
+permissions:
+  contents: write  # do zacommitowania wygenerowanego pliku z powrotem do repo
+  issues: write    # do zgloszenia/aktualizacji issue przy masowym niepowodzeniu (patrz report_issue.py)
+
+concurrency:
+  group: generate-latest-versions
+  cancel-in-progress: false  # nie przerywaj w polowie commitu/pisania pliku
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generuj repo/latest-versions.json
+        env:
+          # Wbudowany token joba (automatycznie tworzony przez GitHub
+          # Actions) -- limit 1000/h, ogromny zapas dla ~kilkunastu
+          # zapytan raz dziennie. Nie wymaga zadnego dodatkowego sekretu.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_latest_versions.py
+
+      - name: Commituj zmiany (jesli cokolwiek sie zmienilo)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- repo/latest-versions.json; then
+            echo "Brak zmian w latest-versions.json -- nic do zacommitowania."
+            exit 0
+          fi
+          git add repo/latest-versions.json
+          git commit -m "chore: automatyczna aktualizacja latest-versions.json"
+          git push
