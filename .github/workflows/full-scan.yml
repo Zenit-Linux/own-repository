@@ -1,0 +1,35 @@
+name: Pełny skan own-repository.json
+
+# W odróżnieniu od test.yml (ktory sprawdza TYLKO to, co sie zmienilo w
+# danym PR/pushu), ten workflow raz w tygodniu sprawdza KAZDY wpis w
+# own-repository.json od nowa. Pakiet poprawny w momencie mergowania moze
+# z czasem "zgnic" -- ktos usunie release, zmieni nazwe repo/organizacji,
+# przeniesie projekt gdzie indziej -- a diff tego nie wylapie, bo
+# own-repository.json sie wtedy w ogole nie zmienia.
+#
+# Poniewaz to cron (nikt recznie nie patrzy na wynik), niepowodzenie samo w
+# sobie nie wystarczy -- skrypt (test_new_package.py, tryb FULL_SCAN=1)
+# dodatkowo zglasza/aktualizuje jeden, identyfikowalny GitHub Issue z pelna
+# lista problemow (patrz scripts/report_issue.py), zamiast cicho siedziec
+# w logach, ktorych nikt nie czyta.
+
+on:
+  schedule:
+    - cron: "43 4 * * 1"  # co poniedzialek 04:43 UTC -- inna godzina niz generator, zeby nie kolidowaly
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write  # do zgloszenia/aktualizacji issue przy znalezionych problemach
+
+jobs:
+  full-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sprawdź WSZYSTKIE narzędzia w own-repository.json
+        env:
+          FULL_SCAN: "1"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/test_new_package.py
